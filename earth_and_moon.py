@@ -29,8 +29,7 @@ class AnimationEarthMoon(Tk):
 
     def draw_moon(self, degree):
         x_moon_point = cos(radians(degree)) * self.radius_earth_moon + self.width / 2
-        y_moon_point = sin(
-            radians(degree)) * self.radius_earth_moon + self.height / 2
+        y_moon_point = sin(radians(degree)) * self.radius_earth_moon + self.height / 2
         moon_coord = self.get_circle_coord(x_moon_point, y_moon_point, self.moon_radius)
         self.canvas.create_oval(moon_coord, fill="white")
         x_crater_point = cos(radians(180+self.degree)) * (self.moon_radius /2) + x_moon_point
@@ -53,4 +52,5 @@ class AnimationEarthMoon(Tk):
 if __name__ == "__main__":
     root = AnimationEarthMoon()
     root.resizable(width=False, height=False)
+    root.title("Earth and Moon Animation")
     root.mainloop()
